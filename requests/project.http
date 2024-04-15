@@ -1,0 +1,21 @@
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "kyky@gmail.com",
+  "password": "password"
+}
+
+###
+POST http://localhost:3000/project/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjYxY2VmNjIxNzdiNzhlMDEzYjc3YTMwIiwibmFtZSI6Ikt5bGlhbiBNJ2JhcHDDqSIsImVtYWlsIjoia3lreUBnbWFpbC5jb20ifSwiaWF0IjoxNzEzMTcyNDYxLCJleHAiOjE3MTMxNzYwNjF9.Tt6_K7yI09N5Ct8eCmG0mpdVV1j8MNPHcDT5hzqyrFE
+
+{
+    "title": "Algo de Kerpo",
+    "introductoryDescription": "Algorithme pronostiqueur de match de tennis.",
+    "completeDescription": "Algorithme pronostiqueur de match de tennis.",
+    "keywords": ["tennis", "pronostiqueur", "algorithme", "machine learning", "IA"],
+    "thumbnailImage": "../src/thumbnail/Logo.ico",
+    "illustrationImages": ["../src/thumbnail/Logo.ico"]
+}

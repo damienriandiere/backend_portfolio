@@ -7,8 +7,6 @@ function createTokens(user) {
     const accessKey = process.env.ACCESS_KEY_SECRET;
     const refreshKey = process.env.REFRESH_KEY_SECRET;
 
-	console.log(accessKey, refreshKey)
-
     const accessToken = jwt.sign({ user }, accessKey, { expiresIn: '1h' });
     const refreshToken = jwt.sign({ user }, refreshKey, { expiresIn: '2h' });
 

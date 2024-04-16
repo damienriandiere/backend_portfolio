@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const userRoutes = require('./routes/userRoutes');
 const authRoutes = require('./routes/authRoutes');
 const projectRoutes = require('./routes/projectRoutes');
-const presentationRoutes = require('./routes/presentationRoute');
 
 mongoose
 	.connect(process.env.DB_URL, {})
@@ -25,7 +24,6 @@ app.use(express.json());
 app.use('/auth', authRoutes);
 app.use('/user', userRoutes);
 app.use('/project', projectRoutes);
-app.use('/contact', presentationRoutes);
 
 const PORT = process.env.PORT;
 

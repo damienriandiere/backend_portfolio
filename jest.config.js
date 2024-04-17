@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
     testMatch: ["**/__tests__/**/*.js"],
     testEnvironment: 'node',

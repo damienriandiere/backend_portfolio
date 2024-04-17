@@ -1,7 +1,6 @@
 {
     "env": {
         "browser": true,
-        "commonjs": true,
         "es2021": true,
         "node": true
     },
@@ -10,80 +9,26 @@
         "ecmaVersion": "latest"
     },
     "rules": {
-        "semi": ["error", "always"],
-        "quotes": ["error", "single"],
-        "no-unused-vars": "error",
-        "no-undef": "error",
-        "no-extra-parens": "error",
-        "no-multiple-empty-lines": "error",
-        "no-trailing-spaces": "error",
-        "comma-dangle": ["error", "never"],
-        "indent": ["error", "4"],
-        "no-multi-spaces": "error",
-        "no-irregular-whitespace": "error",
-        "no-console": "error",
-        "no-alert": "error",
-        "no-debugger": "error",
-        "no-var": "error",
-        "prefer-const": "error",
-        "no-unused-expressions": "error",
-        "no-unused-labels": "error",
-        "no-useless-concat": "error",
-        "no-useless-return": "error",
-        "no-useless-escape": "error",
-        "no-constant-condition": "error",
-        "no-case-declarations": "error",
-        "no-empty": "error",
-        "no-fallthrough": "error",
-        "no-inner-declarations": "error",
-        "no-return-await": "error",
-        "no-unreachable": "error",
-        "valid-typeof": "error",
-        "no-eval": "error",
-        "no-implied-eval": "error",
-        "no-iterator": "error",
-        "no-lone-blocks": "error",
-        "no-new-func": "error",
-        "no-new-wrappers": "error",
-        "no-proto": "error",
-        "no-sequences": "error",
-        "no-template-curly-in-string": "error",
-        "no-use-before-define": "error",
-        "no-void": "error",
-        "no-with": "error",
-        "no-eq-null": "error",
-        "no-extend-native": "error",
-        "no-caller": "error",
-        "no-global-assign": "error",
-        "no-new-object": "error",
-        "no-new-require": "error",
-        "no-self-assign": "error",
-        "no-self-compare": "error",
-        "no-throw-literal": "error",
-        "no-useless-constructor": "error",
-        "array-callback-return": "error",
-        "block-scoped-var": "error",
-        "curly": "error",
-        "default-case": "error",
-        "dot-location": ["error", "property"],
-        "eqeqeq": "error",
-        "no-else-return": "error",
-        "no-implicit-globals": "error",
-        "no-loop-func": "error",
-        "no-multi-str": "error",
-        "no-new": "error",
-        "no-octal": "error",
-        "no-param-reassign": "error",
-        "no-redeclare": "error",
-        "no-restricted-properties": "error",
-        "no-return-assign": "error",
-        "no-script-url": "error",
-        "no-unmodified-loop-condition": "error",
-        "no-useless-call": "error",
-        "no-warning-comments": "error",
-        "prefer-promise-reject-errors": "error",
-        "radix": "error",
-        "wrap-iife": "error",
-        "yoda": "error"
-      }
+        "no-unused-vars": "warn",
+        "indent": [
+            "error",
+            2
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ], 
+        "no-multiple-empty-lines": [
+            "error", 
+            { "max": 1 }
+        ]
+    }
 }

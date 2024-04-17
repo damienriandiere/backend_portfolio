@@ -1,4 +1,4 @@
-const projectService = require('../services/projectService');
+const projectService = require("../services/projectService");
 
 async function getAllProjects(req, res) {
   try {
@@ -16,7 +16,7 @@ async function getProjectById(req, res) {
     if (project) {
       res.json(project);
     } else {
-      res.status(404).json({ message: 'Project not found' });
+      res.status(404).json({ message: "Project not found" });
     }
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -31,8 +31,14 @@ async function createProject(req, res) {
   const thumbnailImage = req.body.thumbnailImage;
   const illustrationImages = req.body.illustrationImages;
   try {
-    const newProject = await projectService.createProject(title, introductoryDescription,
-      completeDescription, keywords, thumbnailImage, illustrationImages);
+    const newProject = await projectService.createProject(
+      title,
+      introductoryDescription,
+      completeDescription,
+      keywords,
+      thumbnailImage,
+      illustrationImages
+    );
     res.status(201).json(newProject);
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -48,8 +54,15 @@ async function updateProject(req, res) {
   const thumbnailImage = req.body.thumbnailImage;
   const illustrationImages = req.body.illustrationImages;
   try {
-    const updatedProject = await projectService.updateProject(projectId, title, introductoryDescription,
-      completeDescription, keywords, thumbnailImage, illustrationImages);
+    const updatedProject = await projectService.updateProject(
+      projectId,
+      title,
+      introductoryDescription,
+      completeDescription,
+      keywords,
+      thumbnailImage,
+      illustrationImages
+    );
     res.json(updatedProject);
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -60,16 +73,16 @@ async function deleteProject(req, res) {
   const projectId = req.params.id;
   try {
     await projectService.deleteProject(projectId);
-    res.json({ message: 'Project deleted' });
+    res.json({ message: "Project deleted" });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 }
 
 module.exports = {
-    getAllProjects,
-    getProjectById,
-    createProject,
-    updateProject,
-    deleteProject
+  getAllProjects,
+  getProjectById,
+  createProject,
+  updateProject,
+  deleteProject,
 };

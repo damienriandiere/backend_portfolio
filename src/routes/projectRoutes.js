@@ -9,5 +9,6 @@ projectRoutes.get("/:id", projectController.getProjectById);
 projectRoutes.post("/", authMiddleware, projectController.createProject);
 projectRoutes.put("/:id", authMiddleware, projectController.updateProject);
 projectRoutes.delete("/:id", authMiddleware, projectController.deleteProject);
+projectRoutes.get("/analytics", projectController.getAnalytics);
 
 module.exports = projectRoutes;

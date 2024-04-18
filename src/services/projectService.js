@@ -34,30 +34,74 @@ async function createProject(
       illustrationImages: illustrationImages,
     });
     await newProject.save();
-    logger.info("Project créé avec succès.");
+    console.info("Project créé avec succès.");
   } catch (error) {
-    logger.error("Erreur durant la création d'un Project : ", error);
+    console.error("Erreur durant la création d'un Project : ", error);
   }
 }
 
-const updateProject = async (id) => {
+async function updateProject(projectId, title, introductoryDescription, completeDescription, keywords, thumbnailImage, illustrationImages) {
+
   try {
-    return await Project.findByIdAndUpdate(id, projectData, { new: true });
+    const project = await Project.findById(projectId);
+
+    project.title = title;
+    project.introductoryDescription = introductoryDescription;
+    project.completeDescription = completeDescription;
+    project.keywords = keywords;
+    project.thumbnailImage = thumbnailImage;
+    project.illustrationImages = illustrationImages;
+
+    const updatedProject = await project.save();
+
+    return updatedProject;
   } catch (error) {
-    throw error;
+    console.error('Erreur lors de la mise à jour du projet :', error);
+    throw new Error('Erreur lors de la mise à jour du projet :', error);
   }
-};
+}
 
 async function deleteProject(id) {
   const project = await Project.findById(id);
 
   if (!project) {
-    logger.error("Project not found !");
+    console.error("Project not found !");
     throw new Error("Project not found !");
   } else {
     await Project.deleteOne({ _id: id });
-    logger.info("Project deleted !");
+    console.info("Project deleted !");
     return { message: "Project deleted !" };
+  }
+}
+
+async function getAnalytics() {
+  try {
+    const projects = getAllProjects();
+    const totalProjects = projects.length;
+
+    let totalKeywords = 0;
+    projects.forEach((project) => {
+      totalKeywords += project.keywords.length;
+    });
+
+    let meanIntroductoryDescription = 0;
+    let meanCompleteDescription = 0;
+    projects.forEach((project) => {
+      meanIntroductoryDescription += project.introductoryDescription.length;
+      meanCompleteDescription += project.completeDescription.length;
+    });
+    meanIntroductoryDescription = meanIntroductoryDescription / totalProjects;
+    meanCompleteDescription = meanCompleteDescription / totalProjects;
+
+    return {
+      totalProjects,
+      totalKeywords,
+      meanIntroductoryDescription,
+      meanCompleteDescription,
+    };
+  } catch (error) {
+    console.error("Erreur lors de la récupération des données d'analyse : ", error);
+    throw new Error("Erreur lors de la récupération des données d'analyse : ", error);
   }
 }
 
@@ -67,4 +111,5 @@ module.exports = {
   createProject,
   updateProject,
   deleteProject,
+  getAnalytics,
 };

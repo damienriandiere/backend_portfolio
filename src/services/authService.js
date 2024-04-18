@@ -65,15 +65,15 @@ async function login(email, password) {
   const findUser = await User.findOne({ email: email });
 
   if (!findUser) {
-    logger.error("User not found !");
+    console.error("User not found !");
     throw new Error("User not found !");
   }
 
   const isMatch = await authUtils.comparePassword(password, findUser.password);
-  logger.info("Passwords compared !");
+  console.info("Passwords compared !");
 
   if (!isMatch) {
-    logger.error("Incorrect password !");
+    console.error("Incorrect password !");
     throw new Error("Incorrect password !");
   }
 

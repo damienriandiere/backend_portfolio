@@ -47,12 +47,12 @@ A project object consists of the following elements:
 1. Clone the repository
 
 ```bash	
-git clone https://github.com/damienriandiere/Backend_fullstack_2024.git
+git clone https://github.com/damienriandiere/backend_portfolio.git
 ```
 2. Navigate to the project directory
 
 ```bash
-cd Backend_fullstack_2024/backend
+cd backend_portfolio/backend
 ```
 
 3. Install dependencies

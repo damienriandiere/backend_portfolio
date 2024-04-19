@@ -1,11 +1,11 @@
 {
-  "swagger": "2.0",
+  "openapi": "3.1.0",
   "info": {
     "version": "1.0.0",
     "title": "Portfolio Damien Riandiere API",
-    "description": "Development server"
+    "description": "API backend portfolio"
   },
-  "host": "localhost:3000",
+  "host": "http:://localhost:3000/",
   "basePath": "/",
   "schemes": [
     "http"
@@ -65,37 +65,6 @@
           }
         }
       },
-      "UserToken": {
-        "type": "object",
-        "properties": {
-          "user": {
-            "$ref": "#/components/schemas/User"
-          },
-          "tokens": {
-            "type": "object",
-            "properties": {
-              "accessToken": {
-                "type": "string",
-                "required": true,
-                "unique": true
-              },
-              "refreshToken": {
-                "type": "string",
-                "required": true,
-                "unique": true
-              },
-              "expiresIn": {
-                "type": "number",
-                "required": true
-              },
-              "refreshExpiresIn": {
-                "type": "number",
-                "required": true
-              }
-            }
-          }
-        }
-      },
       "Project": {
         "type": "object",
         "properties": {
@@ -130,7 +99,10 @@
             "required": true
           },
           "illustrationImages": {
-            "type": "string",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
             "required": true,
             "validate": "1 to 5 images"
           }

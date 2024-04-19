@@ -40,8 +40,15 @@ async function createProject(
   }
 }
 
-async function updateProject(projectId, title, introductoryDescription, completeDescription, keywords, thumbnailImage, illustrationImages) {
-
+async function updateProject(
+  projectId,
+  title,
+  introductoryDescription,
+  completeDescription,
+  keywords,
+  thumbnailImage,
+  illustrationImages
+) {
   try {
     const project = await Project.findById(projectId);
 
@@ -56,8 +63,8 @@ async function updateProject(projectId, title, introductoryDescription, complete
 
     return updatedProject;
   } catch (error) {
-    console.error('Erreur lors de la mise à jour du projet :', error);
-    throw new Error('Erreur lors de la mise à jour du projet :', error);
+    console.error("Erreur lors de la mise à jour du projet :", error);
+    throw new Error("Erreur lors de la mise à jour du projet :", error);
   }
 }
 
@@ -75,38 +82,38 @@ async function deleteProject(id) {
 }
 
 async function getAnalytics() {
-    const projects = await getAllProjects();
-    const totalProjects = projects.length;
+  const projects = await getAllProjects();
+  const totalProjects = projects.length;
 
-    if (totalProjects === 0) {
-      return {
-        totalProjects: 0,
-        totalKeywords: 0,
-        meanIntroductoryDescription: 0,
-        meanCompleteDescription: 0,
-      };
-    }
-
-    let totalKeywords = 0;
-    projects.forEach((project) => {
-      totalKeywords += project.keywords.length;
-    });
-
-    let meanIntroductoryDescription = 0;
-    let meanCompleteDescription = 0;
-    projects.forEach((project) => {
-      meanIntroductoryDescription += project.introductoryDescription.length;
-      meanCompleteDescription += project.completeDescription.length;
-    });
-    meanIntroductoryDescription = meanIntroductoryDescription / totalProjects;
-    meanCompleteDescription = meanCompleteDescription / totalProjects;
-
+  if (totalProjects === 0) {
     return {
-      totalProjects,
-      totalKeywords,
-      meanIntroductoryDescription,
-      meanCompleteDescription,
+      totalProjects: 0,
+      totalKeywords: 0,
+      meanIntroductoryDescription: 0,
+      meanCompleteDescription: 0,
     };
+  }
+
+  let totalKeywords = 0;
+  projects.forEach((project) => {
+    totalKeywords += project.keywords.length;
+  });
+
+  let meanIntroductoryDescription = 0;
+  let meanCompleteDescription = 0;
+  projects.forEach((project) => {
+    meanIntroductoryDescription += project.introductoryDescription.length;
+    meanCompleteDescription += project.completeDescription.length;
+  });
+  meanIntroductoryDescription = meanIntroductoryDescription / totalProjects;
+  meanCompleteDescription = meanCompleteDescription / totalProjects;
+
+  return {
+    totalProjects,
+    totalKeywords,
+    meanIntroductoryDescription,
+    meanCompleteDescription,
+  };
 }
 
 module.exports = {

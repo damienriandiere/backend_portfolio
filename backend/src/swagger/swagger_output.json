@@ -10,7 +10,7 @@
   "schemes": [
     "http"
   ],
-  "components" : {
+  "components": {
     "securitySchemes": {
       "bearerAuth": {
         "type": "http",
@@ -147,7 +147,9 @@
     "/api/auth/login": {
       "post": {
         "security": [],
-        "tags": ["auth"],
+        "tags": [
+          "auth"
+        ],
         "summary": "login",
         "operationId": "authLogin",
         "description": "Retrieve a token from email and password",
@@ -157,8 +159,12 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "email": { "type": "string" },
-                  "password": { "type": "string" }
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
                 }
               }
             }
@@ -181,11 +187,15 @@
               "application/json": {
                 "schema": {
                   "allOf": [
-                    { "$ref": "#/components/schemas/ApiSuccess" },
+                    {
+                      "$ref": "#/components/schemas/ApiSuccess"
+                    },
                     {
                       "type": "object",
                       "properties": {
-                        "data": { "$ref": "#/components/schemas/UserToken" }
+                        "data": {
+                          "$ref": "#/components/schemas/UserToken"
+                        }
                       }
                     }
                   ]
@@ -199,7 +209,9 @@
     "/api/auth/register": {
       "post": {
         "security": [],
-        "tags": ["auth"],
+        "tags": [
+          "auth"
+        ],
         "summary": "register",
         "operationId": "authRegister",
         "description": "Save a new user to the database",
@@ -209,10 +221,18 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "username": { "type": "string" },
-                  "email": { "type": "string" },
-                  "password": { "type": "string" },
-                  "admin": { "type": "boolean" }
+                  "username": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "admin": {
+                    "type": "boolean"
+                  }
                 }
               }
             }
@@ -235,11 +255,15 @@
               "application/json": {
                 "schema": {
                   "allOf": [
-                    { "$ref": "#/components/schemas/ApiSuccess" },
+                    {
+                      "$ref": "#/components/schemas/ApiSuccess"
+                    },
                     {
                       "type": "object",
                       "properties": {
-                        "data": { "$ref": "#/components/schemas/UserToken" }
+                        "data": {
+                          "$ref": "#/components/schemas/UserToken"
+                        }
                       }
                     }
                   ]
@@ -253,7 +277,9 @@
     "/api/auth/refresh": {
       "post": {
         "security": [],
-        "tags": ["auth"],
+        "tags": [
+          "auth"
+        ],
         "summary": "refresh",
         "operationId": "refreshToken",
         "description": "Refresh a token",
@@ -263,8 +289,12 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "email": { "type": "string" },
-                  "password": { "type": "string" }
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
                 }
               }
             }
@@ -287,11 +317,15 @@
               "application/json": {
                 "schema": {
                   "allOf": [
-                    { "$ref": "#/components/schemas/ApiSuccess" },
+                    {
+                      "$ref": "#/components/schemas/ApiSuccess"
+                    },
                     {
                       "type": "object",
                       "properties": {
-                        "data": { "$ref": "#/components/schemas/UserToken" }
+                        "data": {
+                          "$ref": "#/components/schemas/UserToken"
+                        }
                       }
                     }
                   ]
@@ -304,7 +338,9 @@
     },
     "/api/user": {
       "delete": {
-        "tags": ["user"],
+        "tags": [
+          "user"
+        ],
         "summary": "Delete user",
         "operationId": "DeleteUser",
         "description": "Delete a user",
@@ -325,14 +361,18 @@
               "application/json": {
                 "schema": {
                   "allOf": [
-                    { "$ref": "#/components/schemas/ApiSuccess" },
+                    {
+                      "$ref": "#/components/schemas/ApiSuccess"
+                    },
                     {
                       "type": "object",
                       "properties": {
                         "data": {
                           "type": "object",
                           "properties": {
-                            "query": { "$ref": "#/components/schemas/User" }
+                            "query": {
+                              "$ref": "#/components/schemas/User"
+                            }
                           }
                         }
                       }
@@ -345,7 +385,9 @@
         }
       },
       "post": {
-        "tags": ["user"],
+        "tags": [
+          "user"
+        ],
         "summary": "Create an user",
         "operationId": "CreateUser",
         "description": "Create an user",
@@ -366,14 +408,18 @@
               "application/json": {
                 "schema": {
                   "allOf": [
-                    { "$ref": "#/components/schemas/ApiSuccess" },
+                    {
+                      "$ref": "#/components/schemas/ApiSuccess"
+                    },
                     {
                       "type": "object",
                       "properties": {
                         "data": {
                           "type": "object",
                           "properties": {
-                            "query": { "$ref": "#/components/schemas/User" }
+                            "query": {
+                              "$ref": "#/components/schemas/User"
+                            }
                           }
                         }
                       }
@@ -388,7 +434,9 @@
     },
     "/api/projects/": {
       "get": {
-        "tags": ["projects"],
+        "tags": [
+          "projects"
+        ],
         "summary": "Get all projects",
         "description": "Get all projects",
         "responses": {
@@ -408,14 +456,18 @@
               "application/json": {
                 "schema": {
                   "allOf": [
-                    { "$ref": "#/components/schemas/ApiSuccess" },
+                    {
+                      "$ref": "#/components/schemas/ApiSuccess"
+                    },
                     {
                       "type": "object",
                       "properties": {
                         "data": {
                           "type": "object",
                           "properties": {
-                            "query": { "$ref": "#/components/schemas/User" }
+                            "query": {
+                              "$ref": "#/components/schemas/User"
+                            }
                           }
                         }
                       }
@@ -430,7 +482,9 @@
     },
     "/api/projects/analytics": {
       "get": {
-        "tags": ["projects"],
+        "tags": [
+          "projects"
+        ],
         "summary": "Get analytics of projects",
         "description": "Obtain the analytics of projects",
         "parameters": [
@@ -477,14 +531,18 @@
               "application/json": {
                 "schema": {
                   "allOf": [
-                    { "$ref": "#/components/schemas/ApiSuccess" },
+                    {
+                      "$ref": "#/components/schemas/ApiSuccess"
+                    },
                     {
                       "type": "object",
                       "properties": {
                         "data": {
                           "type": "object",
                           "properties": {
-                            "query": { "$ref": "#/components/schemas/User" }
+                            "query": {
+                              "$ref": "#/components/schemas/User"
+                            }
                           }
                         }
                       }
@@ -499,7 +557,9 @@
     },
     "/api/projects/{id}": {
       "get": {
-        "tags": ["projects"],
+        "tags": [
+          "projects"
+        ],
         "summary": "Get a specific project",
         "description": "Get a specific project",
         "parameters": [
@@ -523,7 +583,9 @@
         }
       },
       "put": {
-        "tags": ["projects"],
+        "tags": [
+          "projects"
+        ],
         "summary": "Update a specific project",
         "description": "Create a new project",
         "parameters": [
@@ -554,13 +616,19 @@
                   "example": "any"
                 },
                 "keywords": {
-                  "example": ["any", "any"]
+                  "example": [
+                    "any",
+                    "any"
+                  ]
                 },
                 "thumbnailImage": {
                   "example": "any"
                 },
                 "illustrationImages": {
-                  "example": ["any", "any"]
+                  "example": [
+                    "any",
+                    "any"
+                  ]
                 }
               }
             }
@@ -582,7 +650,9 @@
         }
       },
       "delete": {
-        "tags": ["projects"],
+        "tags": [
+          "projects"
+        ],
         "summary": "Delete a specific project",
         "description": "Delete a specific project",
         "parameters": [

@@ -7,11 +7,11 @@ const isEmailValid = require("../utils/validators");
 async function register(name, email, password, admin) {
   if (
     name === undefined ||
-	name === "" ||
+    name === "" ||
     email === undefined ||
-	email === "" ||
+    email === "" ||
     password === undefined ||
-	password === "" ||
+    password === "" ||
     admin === undefined
   ) {
     console.error("Missing parameters !");

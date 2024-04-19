@@ -8,7 +8,12 @@ async function getUserProfile(userId) {
     throw new Error("User not found !");
   } else {
     console.info("User found !");
-    return { id: user._id, name: user.name, email: user.email, admin: user.admin};
+    return {
+      id: user._id,
+      name: user.name,
+      email: user.email,
+      admin: user.admin,
+    };
   }
 }
 

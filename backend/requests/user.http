@@ -1,0 +1,21 @@
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "name": "Kylian M'bappé",
+  "email": "kyky@gmail.com",
+  "password": "password",
+  "status": "admin"
+}
+
+###
+DELETE http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "name": "Kylian M'bappé",
+  "email": "kyky@gmail.com",
+  "password": "password",
+  "status": "admin"
+}
+

@@ -1,0 +1,26 @@
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "name": "Kylian M'bappé",
+  "email": "kyky@gmail.com",
+  "password": "password",
+  "status": "admin"
+}
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "kyky@gmail.com",
+  "password": "password"
+}
+
+###
+POST http://localhost:3000/auth/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MWJkMTc1ZDlkNDEzMGM0Mzg3YTljMyIsIm5hbWUiOiJLeWxpYW4gTSdiYXBww6kiLCJlbWFpbCI6Imt5a3lAZ21haWwuY29tIiwiaWF0IjoxNzEzMDk5MjYyLCJleHAiOjE3MTMxMDY0NjJ9.j1V6IJuiOWA6ks8ZP6ODiuaHw5VtPMfPKqCgTyvoV8k"
+}

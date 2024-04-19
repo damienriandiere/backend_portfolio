@@ -66,10 +66,10 @@ pnpm install
 ```bash	
 # env.sample
 ACCESS_KEY_SECRET= #Secret for the access token
-DB_URL= #URL for the database
-PORT= #Port number for the server
+DB_URL= #URL for the database ex: mongodb://localhost:27017/
+PORT= #Port number for the server ex: 3000
 REFRESH_KEY_SECRET= #Secret for the refresh token
-URL= #URL for the server
+URL= #URL for the server ex: localhost
 ```
 
 ## Usage
@@ -79,6 +79,16 @@ pnpm run start
 ```
 
 ## Development mode
+
+Create a file named .env.development.local and fix the variables :
+```bash	
+# env.sample
+ACCESS_KEY_SECRET= #Secret for the access token
+DB_URL= #URL for the database ex: mongodb://localhost:27017/
+PORT= #Port number for the server ex: 3000
+REFRESH_KEY_SECRET= #Secret for the refresh token
+URL= #URL for the server ex: localhost
+```
 
 ```bash
 pnpm run dev

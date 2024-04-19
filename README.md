@@ -111,8 +111,8 @@ pnpm run dev
   |── LICENSE # MIT License
   |── package.json # Package.json
   |── pnpm-lock.yaml # Pnpm lock file
-  |── README.md # Readme
 |── docker-compose.yml # Docker compose file
+|── README.md # Readme
 
 ```
 

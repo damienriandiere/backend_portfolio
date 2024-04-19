@@ -3,7 +3,6 @@ const userServices = require("./userService");
 const authUtils = require("../utils/authUtils");
 const User = require("../models/userModel");
 const isEmailValid = require("../utils/validators");
-const dotenv = require("dotenv");
 
 async function register(name, email, password, admin) {
   if (

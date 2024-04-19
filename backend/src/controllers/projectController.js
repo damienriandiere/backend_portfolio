@@ -53,7 +53,6 @@ async function updateProject(req, res) {
   const keywords = req.body.keywords;
   const thumbnailImage = req.body.thumbnailImage;
   const illustrationImages = req.body.illustrationImages;
-  console.log(req.body)
   if (!projectId || !title || !introductoryDescription || !completeDescription || !keywords || !thumbnailImage || !illustrationImages) {
     res.status(400).json({ message: "Missing fields" });
     return;
@@ -87,7 +86,7 @@ async function deleteProject(req, res) {
 async function getAnalytics(req, res) {
   try {
     const analytics = await projectService.getAnalytics();
-    res.json(analytics);
+    res.json({analytics});
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

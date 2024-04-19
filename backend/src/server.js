@@ -27,9 +27,9 @@ app.use((req, res, next) => {
 
 app.use(helmet());
 app.use(express.json());
-app.use('/auth', authRoutes);
-app.use('/user', userRoutes);
-app.use('/projects', projectRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/user', userRoutes);
+app.use('/api/projects', projectRoutes);
 swaggerRoutes(app);
 
 const PORT = process.env.PORT;

@@ -75,9 +75,17 @@ async function deleteProject(id) {
 }
 
 async function getAnalytics() {
-  try {
-    const projects = getAllProjects();
+    const projects = await getAllProjects();
     const totalProjects = projects.length;
+
+    if (totalProjects === 0) {
+      return {
+        totalProjects: 0,
+        totalKeywords: 0,
+        meanIntroductoryDescription: 0,
+        meanCompleteDescription: 0,
+      };
+    }
 
     let totalKeywords = 0;
     projects.forEach((project) => {
@@ -99,10 +107,6 @@ async function getAnalytics() {
       meanIntroductoryDescription,
       meanCompleteDescription,
     };
-  } catch (error) {
-    console.error("Erreur lors de la récupération des données d'analyse : ", error);
-    throw new Error("Erreur lors de la récupération des données d'analyse : ", error);
-  }
 }
 
 module.exports = {

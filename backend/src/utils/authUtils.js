@@ -1,6 +1,5 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const dotenv = require("dotenv");
 
 function createTokens(user) {
   const accessKey = process.env.ACCESS_KEY_SECRET;

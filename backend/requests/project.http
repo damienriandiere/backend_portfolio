@@ -9,7 +9,7 @@ Content-Type: application/json
 ###
 POST http://localhost:3000/project/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjYxY2VmNjIxNzdiNzhlMDEzYjc3YTMwIiwibmFtZSI6Ikt5bGlhbiBNJ2JhcHDDqSIsImVtYWlsIjoia3lreUBnbWFpbC5jb20ifSwiaWF0IjoxNzEzMTcyNDYxLCJleHAiOjE3MTMxNzYwNjF9.Tt6_K7yI09N5Ct8eCmG0mpdVV1j8MNPHcDT5hzqyrFE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjYxY2VmNjIxNzdiNzhlMDEzYjc3YTMwIiwibmFtZSI6Ikt5bGlhbiBNJ2JhcHDDqSIsImVtYWlsIjoia3lreUBnbWFpbC5jb20ifSwiaWF0IjoxNzEzMjU3MDExLCJleHAiOjE3MTMyNjA2MTF9.bM7flZ4cDaG5G5NkgKzo97_Yf4sGw6S6rW9lFfBs6jg
 
 {
     "title": "Algo de Kerpo",
